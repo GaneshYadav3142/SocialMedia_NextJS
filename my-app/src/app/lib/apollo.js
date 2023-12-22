@@ -1,5 +1,6 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import Cookies from 'js-cookie';
 
 const httpLink = createHttpLink({
     uri: 'http://localhost:4000/graphql',
@@ -7,13 +8,13 @@ const httpLink = createHttpLink({
 
   const authLink = setContext((_, { headers }) => {
     // get the authentication token from local storage if it exists
-    // const token = localStorage.getItem('token');
+     const token = Cookies.get('token');
     // return the headers to the context so httpLink can read them
     return {
       headers: {
         ...headers,
-        // authorization: token ? `Bearer ${token}` : "",
-        authorization :`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTgwMzgyMmIxZTA0YTFhYjk1OTVhMjIiLCJ1c2VybmFtZSI6IkdhbmVzaCBZYWRhdiIsImlhdCI6MTcwMzE2MjExNiwiZXhwIjoxNzAzMjA1MzE2fQ.J_Bf0MjmoQU1RUkQbZTaoo6OsvraHDtrZ8A__kJdzl8`
+         authorization: token ? `${token}` : "",
+        // authorization :`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTgwMzgyMmIxZTA0YTFhYjk1OTVhMjIiLCJ1c2VybmFtZSI6IkdhbmVzaCBZYWRhdiIsImlhdCI6MTcwMzIyNTM4MSwiZXhwIjoxNzAzMjY4NTgxfQ.psM7MmSo3tVlSmJtISBBDQjlDAXOe4XIUmvZ580HI6w`
       }
     }
   });
