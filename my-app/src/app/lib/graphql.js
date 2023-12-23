@@ -19,6 +19,23 @@ export const GET_ALL_POSTS = gql`
   }
 `;
 
+export const GET_USER_POSTS=gql`
+query GetUserPost($userId: ID!){
+  userPost(id: $userId) {
+    _id,
+      image
+      description
+      comment {
+              description
+              name
+              }
+      userData {
+             username
+             }
+  }
+}
+`
+
 export const SIGNUP_USER=gql`
 mutation  RegisterUser($user: addUserInput!){
   addUser(user: $user) {

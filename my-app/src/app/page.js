@@ -10,9 +10,9 @@ export default function Home() {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error : {error.message}</p>;
-  console.log(data.getAllPost)
+  console.log(process.env.NEXT_PUBLIC_SECRET)
   return (
-      <div className="w-60 md:w-full">
+      <div className="w-60 ">
         {data.getAllPost.map((element)=>{
           return <Post key={element._id} {...element}/>
         })}

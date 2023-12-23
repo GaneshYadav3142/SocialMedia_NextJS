@@ -17,8 +17,8 @@ const Login = () => {
         console.log(email,password)
         try {
           const { data } = await loginUser({ variables: { email:email,password:password } });
-          console.log('User loggedIn successfully:', data.loginUser.token);
         Cookies.set('token', data.loginUser.token, { secure: true });
+        alert("Login Successful")
           router.push("/")
         } catch (error) {
           console.error( error);
