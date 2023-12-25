@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from './(Components)/Navbar'
 import { ApolloProvider } from '@apollo/client'
 import client from './lib/apollo'
+import PrivateRoute from './(Components)/PrivateRoute'
 
 const inter = Inter({ subsets: ['latin'] })
 
