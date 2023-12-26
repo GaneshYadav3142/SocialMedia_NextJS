@@ -19,9 +19,6 @@ const MyPosts = () => {
     if (error) return <p>Error : {error.message}</p>;
     console.log(data)
 
- 
-   
-
   return (
     <div>
         {/* <h1>Hello</h1> */}

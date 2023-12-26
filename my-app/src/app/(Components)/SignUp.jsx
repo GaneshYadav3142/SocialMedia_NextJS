@@ -17,6 +17,9 @@ const SignUp = () => {
         password:""
     })
 
+    if (loading) return 'Submitting...';
+  if (error) return `Submission error! ${error.message}`;
+
     const handleSignup = async () => {
         try {
           const { data } = await addUser({ variables: { user: newUser } });

@@ -51,3 +51,14 @@ mutation LoginUser($email:String!,$password:String!){
   }
 }
 `
+
+export const ADD_POST=gql`
+mutation AddUserPost($post: addPostInput!){
+  addPost(post: $post) {
+    _id,
+    image,
+    description,
+    userId
+  }
+}
+`

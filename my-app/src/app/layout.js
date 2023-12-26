@@ -4,7 +4,9 @@ import './globals.css'
 import Navbar from './(Components)/Navbar'
 import { ApolloProvider } from '@apollo/client'
 import client from './lib/apollo'
-import PrivateRoute from './(Components)/PrivateRoute'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,6 +21,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
       <ApolloProvider client={client}>
         <Navbar/>
+        <ToastContainer/>
         {children}
         </ApolloProvider>
         </body>
