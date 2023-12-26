@@ -4,6 +4,7 @@ import MyPosts from '../(Components)/MyPosts'
 import PrivateRoute from '../(Components)/PrivateRoute'
 
  const MyPost = () => {
+  
   return (
     <div>
      <PrivateRoute>

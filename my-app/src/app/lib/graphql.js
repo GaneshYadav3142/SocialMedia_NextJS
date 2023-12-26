@@ -62,3 +62,12 @@ mutation AddUserPost($post: addPostInput!){
   }
 }
 `
+
+export const DELETE_POST=gql`
+mutation DeleteUserPost($deletePostId: ID!){
+  deletePost(id: $deletePostId) {
+    image,
+    description
+  }
+}
+`
